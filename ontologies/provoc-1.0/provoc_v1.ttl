@@ -1,0 +1,305 @@
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix drm: <http://vocab.data.gov/def/drm#> .
+@prefix gr: <http://purl.org/goodrelations/v1#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix org1: <http://www.w3.org/TR/vocab-org/#org:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pv: <http://ns.inria.fr/provoc#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix spec: <http://xmlns.com/foaf/spec/#> .
+@prefix v1: <http://www.heppnetz.de/ontologies/goodrelations/v1#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dbo:formationYear a owl:DatatypeProperty ;
+    rdfs:domain gr:ProductOrService ;
+    rdfs:range xsd:string .
+
+<http://ns.inria.fr/provoc> a owl:Ontology ;
+    cc:license <http://creativecommons.org/licenses/by/3.0/> ;
+    dc:contributor <http://www-sop.inria.fr/members/Elena.Cabrio/>,
+        <http://www-sop.inria.fr/members/Fabien.Gandon/>,
+        <http://www.viseo.com/en/research/Cedric-Lopez>,
+        <http://www.viseo.com/en/research/Frederique-Segond> ;
+    dc:description "ProVoc (Product Vocabulary) is a vocabulary that can be used to represent information and manipulate them through the Web. This ontology reflects: 1) The basic hierarchy of a company: Group (Company), Divisions of a Group, Brand names attached to a Division or a Group, and 2) The production of a company: products, ranges of products (attached to a Brand), the composition of a product, packages of products..."@en ;
+    dc:issued "2016-01-01"^^xsd:date ;
+    dc:publisher <http://wimmics.inria.fr/>,
+        <http://www.viseo.com/> ;
+    dc:rights "Copyright © 2016 INRIA and VISEO" ;
+    dc:title "Product Vocabulary"@en ;
+    voaf:preferredNamespacePrefix "voaf" ;
+    voaf:preferredNamespaceUri "http://purl.org/vocommons/voaf#" ;
+    rdfs:comment """ProVoc (Product Vocabulary) is a vocabulary that can be used to represent information and manipulate them through the Web. This ontology reflects: 1) The basic hierarchy of a company: Group (Company), Divisions of a Group, Brand names attached to a Division or a Group, and 2) The production of a company: products, ranges of products (attached to a Brand), the composition of a product, packages of products...
+
+
+What contributions ? 
+
+- pv:Range
+In ProVoc we introduce pv:Range.
+GoodRelations defined "variants" ( http://wiki.goodrelations-vocabulary.org/Documentation/Product_variants , http://www.heppnetz.de/ontologies/goodrelations/v1.html#isVariantOf ) as following: ""A variant is a specialization of a product model and inherits all of its product properties, unless they are defined locally. This allows a very compact modeling of product models that vary only in  a few properties. "
+According to GoodRelations, a variant of a MacBook is for example a MacBook13Inch or MacBook15Inch which vary in screen size and in available USB ports. This is inheritage between a product model and its derivatives, which must meet the standards imposed by the product model (obviously values can be redefined locally). According to the current version of GoodRelations,gr:isVariantOf necessarily exists between two models of product or service. However, ranges of products can hardly be considered as a set of derivatives of a product (or model of product). For example, Elsève is a range of products offering shampoos with some derivatives, but Elsève also offers creams with derivatives, oils with derivatives etc., so apart that such products are related to treatment for hair, they have not much in common. Using gr:isVariantOf between certain 'close' products, we would obtain multiple clusters of related products, to the detriment of a unique range of products. Using pv:Range allows to respect the structure provided by the expert.
+In conclusion, variants seem to identify similar products (see also http://www.heppnetz.de/ontologies/goodrelations/v1#isSimilarTo which differs from gr:isVariantOf by the fact that the domain and ranks of isSimilarTo are larger), but pv:range has a different vocation.
+gr:isVariantOf has a very broad and subjective semantics (such as gr:isSimilarTo, as Mr. Hepp said clearly here http://www.heppnetz.de/ontologies/goodrelations/v1#isSimilarTo ). For example , with gr:isVariantOf it would be possible to express that a Renault Clio 4 is a variant of a Ford Fiesta ( http://www.autonews.fr/nouveautes/nouveaute/104216-renault-clio-fiesta-prix/ yet they are not of the same brand) whilst they are not of the same brand name.
+Finally, note that a pv:Range does not represent a set of products nor product models. pv:range is used to objectively link a brand to its products (provided by the expert).
+It would be appropriate to limit the use of gr:isVariantOf to products belonging to a pv:Range.
+
+- pv:Package
+In ProVoc we introduce the pv:Package class that is used to represent sets of products sold as a single product. For example a cosmetic box containing a BB cream, a lip gloss, and a perfume byl Lancôme. Another example is a food package that contains different products.
+
+-pv:Provider
+In ProVoc we introduce the pv:Provider that makes a product available in the e-commerce.
+
+- pv:Component
+In ProVoc we introduce the pv:Component which enables to describe the composition of a product (for instance, a perfume can contain linalool).
+
+We  introduce more properties and classes in order to refine the model. For instance, pv:Model, pv:Designer, and pv:Ambassador appear as a subclass of foaf:Person.  ProVoc can also be used in order to link products and their components with their impact on health ( see pv:healthImpact).
+
+Concerning classic properties related to the product, such as color, price, reference, description, etc., see Good Relations (http://www.heppnetz.de/projects/goodrelations/).
+"""@en,"""ProVoc (Product Vocabulary) est un vocabulaire qui peut être utilisé pour représenter des informations et les manipuler à travers le Web. L'ontologie permet de représenter : 1) La hiérarchie d'une société : Groupe (Entreprise), Divisions d'un groupe, Marques d'une division ou d'un groupe, 2) La production d'une société : Gammes de produits (attachées à une marque), produits d'une gamme, packages de produits (un panier alimentaire par exemple), composition des produits...
+
+Quels apports ? 
+
+- pv:Range
+Dans ProVoc, nous introduisons les gammes de produits pv:Range.
+GoodRelations défini des variantes de produits  (http://wiki.goodrelations-vocabulary.org/Documentation/Product_variants, http://www.heppnetz.de/ontologies/goodrelations/v1.html#isVariantOf) : "A variant is a specialization of a product model and inherits all of its product properties, unless they are defined locally. This allows a very compact modeling of product models that vary only in  a few properties."
+D'après GoodRelations, une variante d'un MacBook est par exemple un MacBook13Inch ou un MacBook15Inch qui varient par leur taille d'écran  et la quantité de ports USB disponibles. Il s'agit d'héritage entre un produit « parent » et ses dérivés qui doivent respecter les normes imposées par le produit « parent » (à moins de redéfinir les valeurs). Dans la version actuelle de GoodRelations, il existe une relation gr:isVariantOf nécessairement entre deux modèles de produits ou service. Or, les gammes de produits peuvent difficilement être traitées comme un ensemble de dérivés d'un produit/modèle commun. Par exemple, Elsève est une gamme proposant des shampooings avec des dérivés, mais Elsève propose aussi des Colorations avec des dérivés,  des Huiles avec des dérivés etc etc, donc à part qu'il s'agit de traitement pour les cheveux, ces  produits n'ont pas grand-chose en commun. En utilisant gr:isVariantOf entre certains produits « proches », on aurait plusieurs clusters de produits apparentés, au détriment d'une gamme unique. L'utilisation de pv:Range permet de respecter la structure fournie par l'expert, non subjective.
+En conclusion, les variantes semblent pertinentes pour identifier des produits similaires (voir également http://www.heppnetz.de/ontologies/goodrelations/v1#isSimilarTo qui ne se différencie de isVariantOf que par le fait que le domain et le range de isSimilarTo sont plus large), mais les gammes de produits ont une toute autre vocation.
+gr:isVariantOf a une sémantique très large et subjective (comme pour isSimilarTo, d’ailleurs M. Hepp le dit clairement ici http://www.heppnetz.de/ontologies/goodrelations/v1#isSimilarTo). Par exemple, rien n’empêche d’exprimer qu’une Renault Clio 4 est une variante d’une Ford Fiesta (http://www.autonews.fr/nouveautes/nouveaute/104216-renault-clio-fiesta-prix/ pourtant elles ne sont pas de la même marque.  
+Enfin, notons qu'une pv:Range ne représente ni un produit ni un modèle de produit. pv:Range permet de lier une marque à ses produits de façon non subjective (fournie par l’expert). 
+Il serait pertinent de limiter l’utilisation de gr:isVariantOf aux produits appartenant à une pv:Range.
+
+- pv:Package
+Dans ProVoc nous introduisons la classe pv:Package qui permet de représenter des ensembles de produits vendus comme un unique produit. Par exemple un coffret de cosmétique contenant une BB crème, un gloss, et le parfum La vie est Belle de Lancôme. Un autre exemple est un panier alimentaire contenant différents produits.
+
+- pv:Provider
+Dans ProVoc nous introduisons pv:Provider qui représente les fournisseurs de produits (par exemple Carrefour est fournisseur des produits Nutella).
+
+-  pv:Component
+Dans ProVoc nous introduisons pv:Component qui permet de décrire la composiiton d'un produit (par exemple, un parfum peut contenir du linalool).
+
+D'autres classes et propriétés sont introduites dans ProVoc dans le but de raffiner le modèle. Par exemple, pv:Model, pv:Designer, et pv:Ambassador sont des sous-classes de foaf:Person. ProVoc permet aussi de lier les composants d'un produit avec leur impact sur la santé (pv:healthImpact).
+
+Concernant les propriétés classiques liées directement au produit, telles que la couleur, le prix, la référence, la description, etc, voir Good Relations.
+"""@fr ;
+    owl:versionInfo 1.0 .
+
+pv:belongsToBrand a owl:ObjectProperty ;
+    rdfs:comment "This specifies the brand of a range or a product."@en ;
+    rdfs:domain gr:ProductOrService ;
+    rdfs:range v1:Brand .
+
+pv:belongsToDivision a owl:ObjectProperty ;
+    rdfs:comment "This specifies the division that proposes a brand."@en ;
+    rdfs:domain v1:Brand ;
+    rdfs:range <http://vivoweb.org/ontology/core#Division> .
+
+pv:belongsToGroup a owl:ObjectProperty ;
+    rdfs:comment "This specifies the group that contains divisions."@en ;
+    rdfs:domain <http://vivoweb.org/ontology/core#Division> ;
+    rdfs:range org:Organization .
+
+pv:belongsToPackage a owl:ObjectProperty ;
+    rdfs:comment "This specifies the package that contains several products,, not neceserraly from the same pv:Range."@en ;
+    rdfs:domain gr:ProductOrService ;
+    rdfs:range pv:Package .
+
+pv:belongsToProductOrServiceRange a owl:ObjectProperty ;
+    rdfs:comment "This specifies the range of products."@en ;
+    rdfs:domain gr:ProductOrService .
+
+pv:comment a owl:AnnotationProperty .
+
+pv:consistsOf a owl:ObjectProperty ;
+    rdfs:comment "This specifies the components included in a component."@en ;
+    rdfs:domain pv:Component ;
+    rdfs:range pv:Component .
+
+pv:hasAmbassador a owl:ObjectProperty ;
+    rdfs:comment "This specifies the ambassadors of a product, a range of product, a brand, a division, etc..."@en ;
+    rdfs:domain gr:BusinessEntity,
+        gr:ProductOrService,
+        <http://schema.org/Provider>,
+        <http://schema.org/brand>,
+        <http://vivoweb.org/ontology/core#Division>,
+        v1:Brand,
+        org:Organization ;
+    rdfs:range pv:Ambassador ;
+    rdfs:subPropertyOf pv:hasRepresentative .
+
+pv:hasComponent a owl:ObjectProperty ;
+    rdfs:comment "This specifies the components included in a product."@en ;
+    rdfs:domain gr:ProductOrService ;
+    rdfs:range pv:Component .
+
+pv:hasFounder a owl:ObjectProperty ;
+    rdfs:comment "This specifies the founder of a group."@en ;
+    rdfs:domain org:Organization ;
+    rdfs:range <http://xmlns.com/foaf/0.1/Person> .
+
+pv:hasFragranceCreator a owl:ObjectProperty ;
+    rdfs:comment "This specifies the creator of a fragrance."@en ;
+    rdfs:domain gr:ProductOrService ;
+    rdfs:range <http://xmlns.com/foaf/0.1/Person> ;
+    rdfs:subPropertyOf pv:hasCreator .
+
+pv:hasFunctionality a owl:DatatypeProperty ;
+    rdfs:comment "This specifies the functionalities/roles of a component. For instance \"sodium nitrate\" is a food preservative."@en ;
+    rdfs:domain pv:Component ;
+    rdfs:range xsd:string .
+
+pv:hasModel a owl:ObjectProperty ;
+    rdfs:comment "This specifies the models who represent a product, a range of product, a brand, a division, etc..."@en ;
+    rdfs:domain gr:BusinessEntity,
+        gr:ProductOrService,
+        <http://schema.org/brand>,
+        v1:Brand,
+        org:Organization ;
+    rdfs:subPropertyOf pv:hasRepresentative .
+
+pv:hasPackageDesigner a owl:ObjectProperty ;
+    rdfs:comment "This specifies the designer of a fragrance."@en ;
+    rdfs:range pv:Designer ;
+    rdfs:subPropertyOf pv:hasCreator .
+
+pv:hasProvider a owl:ObjectProperty ;
+    rdfs:comment "This specifies providers of products incurred by a corporation. for instance Sephora is a provider of L'Oréal."@en ;
+    rdfs:domain gr:ProductOrService ;
+    rdfs:range <http://schema.org/Provider> .
+
+pv:hasTarget a owl:DatatypeProperty ;
+    rdfs:comment "A product or service may have a target, for example, male or female."@en,
+        "Un produit ou service peut avoir une cible, par exemple féminine ou masculine."@fr ;
+    rdfs:domain gr:ProductOrService .
+
+pv:hasVersion a owl:DatatypeProperty ;
+    rdfs:comment "A product or service may have different versions."@en ;
+    rdfs:domain gr:ProductOrService ;
+    rdfs:range xsd:string .
+
+pv:healthImpact a owl:DatatypeProperty ;
+    rdfs:comment "A component/ingredient of a product may have an impact according to health."@en ;
+    rdfs:domain pv:Component ;
+    rdfs:range xsd:string .
+
+dc:creator a owl:DatatypeProperty .
+
+dc:date a owl:DatatypeProperty .
+
+dc:source a owl:DatatypeProperty,
+        owl:ObjectProperty ;
+    rdfs:comment "A related resource from which the described resource is derived."@en .
+
+gr:color a owl:DatatypeProperty ;
+    rdfs:domain gr:ProductOrService ;
+    rdfs:range xsd:string .
+
+voaf:Vocabulary a owl:Class .
+
+drm:worksFor a owl:ObjectProperty ;
+    rdfs:comment "This specifies persons who are working or who worked for a brand or a business entity."@en ;
+    rdfs:domain <http://xmlns.com/foaf/0.1/Person> ;
+    rdfs:range gr:BusinessEntity,
+        <http://schema.org/brand>,
+        v1:Brand,
+        org:Organization .
+
+v1:description a owl:DatatypeProperty ;
+    rdfs:domain gr:ProductOrService ;
+    rdfs:range xsd:string .
+
+vcard:hasLogo a owl:AnnotationProperty,
+        owl:DatatypeProperty ;
+    rdfs:domain pv:ProductOrServiceRange,
+        v1:Brand,
+        org:Organization ;
+    owl:equivalentProperty spec:term_logo .
+
+org:hasPrimarySite a owl:ObjectProperty ;
+    rdfs:domain org:Organization ;
+    rdfs:subPropertyOf org:hasSite .
+
+spec:Organization a owl:Class .
+
+spec:Person a owl:Class .
+
+pv:Ambassador a owl:Class ;
+    rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> .
+
+pv:Designer a owl:Class ;
+    rdfs:comment "The person (or the entity) who designed the product"@en,
+        "La personne (ou l'entité) qui a designé le produit"@fr ;
+    rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> .
+
+pv:Package a owl:Class ;
+    rdfs:comment "A package is a set of products. For example, a cosmetic package containing creams, a perfume, gloss , ..."@en,
+        "Un package est un ensemble de produits. Par exemple, un coffret de cosmétique qui contient des crèmes, un parfum, du gloss, ..."@fr .
+
+org:hasSite a owl:ObjectProperty .
+
+spec:term_Agent a owl:Class .
+
+spec:term_depiction a owl:AnnotationProperty,
+        owl:DatatypeProperty ;
+    rdfs:comment "The depiction property is a relationship between a thing and an Image that depicts it. This property can be used for the image of a product, for instance."@en ;
+    rdfs:domain pv:ProductOrServiceRange,
+        gr:ProductOrService .
+
+spec:term_logo a owl:DatatypeProperty ;
+    rdfs:domain v1:Brand,
+        org:Organization ;
+    rdfs:subPropertyOf spec:term_depiction .
+
+pv:ProductOrServiceRange a owl:Class ;
+    rdfs:comment "A range of commercial products"@en,"""GoodRelations defined "variants" ( http://wiki.goodrelations-vocabulary.org/Documentation/Product_variants , http://www.heppnetz.de/ontologies/goodrelations/v1.html#isVariantOf ) as following: ""A variant is a specialization of a product model and inherits all of is product properties, unless they are defined locally. This allows a very compact modeling of product models that vary only in  a few properties. "
+According to GoodRelations, a variant of a MacBook is for example a MacBook13Inch or MacBook15Inch which vary in screen size and in available USB ports. This is inheritage between a product model and its derivatives, which must meet the standards imposed by the product model (obviously values can be redefined locally). According to the current version of GoodRelations, the relation"isVariantOf" necessarily exists between two models of product or service. However, ranges of products can hardly be considered as a set of derivatives of a product (or model of product). For example, Elsève is a range of products offering shampoos with some derivatives, but Elsève also offers creams with derivatives, oils with derivatives etc., so apart that such products are related to treatment for hair, they have not much in common. Using gr:isVariantOf between certain 'close' products, we would obtain multiple clusters of related products, to the detriment of a unique range of products. Using pv:Range allows to respect the structure provided by the expert.
+In conclusion, gr:variants seem to identify similar products (see also http://www.heppnetz.de/ontologies/goodrelations/v1#isSimilarTo which differs from gr:isVariantOf by the fact that the domain and ranks of isSimilarTo are larger), but pv:range has a different vocation.
+gr:isVariantOf has a very broad and subjective semantics (such as gr:isSimilarTo, as Mr. Hepp said clearly here http://www.heppnetz.de/ontologies/goodrelations/v1#isSimilarTo ). For example , with gr:isVariantOf it would be possible to express that a Renault Clio 4 is a variant of a Ford Fiesta ( http://www.autonews.fr/nouveautes/nouveaute/104216-renault-clio-fiesta-prix/ yet they are not of the same brand) whilst they are not of the same brand name.
+Finally, note that a pv:Range does not represent a set of products nor product models. pv:range is used to objectively link a brand to its products (provided by the expert).
+It would be appropriate to limit the use of gr:isVariantOf to products belonging to a pv:Range."""@en ;
+    rdfs:subClassOf owl:Thing .
+
+pv:hasCreator a owl:ObjectProperty ;
+    rdfs:comment "This specifies main contributors of the creation of the product."@en ;
+    rdfs:domain gr:ProductOrService ;
+    rdfs:range <http://xmlns.com/foaf/0.1/Person> .
+
+pv:hasRepresentative a owl:ObjectProperty ;
+    rdfs:comment "This specifies persons who represent a product, a range of product, a brand, a division, etc..."@en .
+
+<http://schema.org/Provider> a owl:Class ;
+    rdfs:comment "The provider is an organization. It differs from the organization in that sense that brands do not belong to him. The supplier offers brands for sale that do not always belong to the same organisaation. Example: Carrefour sells products belonging to Lustucru and Tipiak companies."@en,
+        "Le fournisseur est une organisation. Il se distingue de l'organisation par le fait que les marques ne lui appartiennent pas, il ne fait que les commercialiser. Le fournisseur propose des marques à la vente qui n'appartiennent pas toujours à la même organisation. Exemple : Carrefour vend des produits des entreprises Lustucru et Tipiak."@fr ;
+    rdfs:subClassOf org:Organization .
+
+gr:BusinessEntity a owl:Class ;
+    owl:equivalentClass org:Organization .
+
+<http://schema.org/brand> a owl:Class ;
+    owl:equivalentClass v1:Brand .
+
+<http://vivoweb.org/ontology/core#Division> a owl:Class ;
+    pv:comment """Une instance de cette classe représente une division (un sous-groupe) de BusinessEntity. En effet, une organisation est parfois divisée en plusieurs divisions, et chaque division propose des marques différentes. GoodRelations lie gr:BusinessEntity directement à gr:Brand.
+Exemple : L'Oréal Grand Public est une division du groupe L'Oréal."""@fr ;
+    rdfs:comment """An instance of this class represents a division  (a subgroup) of a BusinessEntity. Indeed, an organization is sometimes divided into several divisions, and each division provides different brands. GoodRelations propose a direct relation between gr:BusinessEntity and gr:Brand.
+Example: L'Oréal Consumer is a division of L'Oréal group."""@en ;
+    rdfs:subClassOf org:Organization .
+
+pv:Component a owl:Class ;
+    rdfs:comment "Component of a product (for instance a flywheel or an exhaust pipe for a car, component ingredients of a perfume, etc.  )"@en,
+        "Composant d'un produit (par exemple un volant ou un tuyau d'échappement pour une voiture, les ingrédients d'un parfum, etc.)"@fr ;
+    rdfs:subClassOf owl:Thing .
+
+<http://xmlns.com/foaf/0.1/Person> a owl:Class ;
+    rdfs:subClassOf spec:term_Agent .
+
+v1:Brand a owl:Class .
+
+org:Organization a owl:Class .
+
+gr:ProductOrService a owl:Class .
+

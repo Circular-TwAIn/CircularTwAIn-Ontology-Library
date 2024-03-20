@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Edited Redirect" name="http://qudt.org/2.1/schema/qudt" uri="qudt-public-repo-2.1.36/schema/SCHEMA_QUDT-v2.1.ttl"/>
+    <uri id="User Edited Redirect" name="http://qudt.org/schema/qudt" uri="qudt-public-repo-2.1.36/schema/SCHEMA_QUDT-v2.1.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://w3id.org/idsa/core/4.2.0" uri="ids-4.2.0/ids.ttl"/>
+    <uri id="User Edited Redirect" name="http://www.linkedmodel.org/schema/vaem" uri="qudt-public-repo-2.1.36/schema/vaem.xml"/>
+    <uri id="User Edited Redirect" name="http://www.linkedmodel.org/schema/dtype" uri="qudt-public-repo-2.1.36/schema/dtype.xml"/>
+    <uri id="User Edited Redirect" name="http://qudt.org/2.1/schema/qudt" uri="qudt-public-repo-2.1.36/schema/SCHEMA_QUDT-v2.1.ttl"/>
+    <uri id="User Edited Redirect" name="http://qudt.org/schema/qudt" uri="qudt-public-repo-2.1.36/schema/SCHEMA_QUDT-v2.1.ttl"/>
+    <uri id="User Edited Redirect" name="https://w3id.org/idsa/core" uri="ids-4.2.0/ids.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://www.w3.org/ns/ssn/" uri="ssn/ssn.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://www.w3.org/ns/sosa/" uri="sosa/sosa.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://saref.etsi.org/saref4inma/v1.1.2/" uri="saref4inma-1.1.2/saref4inma.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://ns.inria.fr/provoc" uri="provoc-1.0/provoc_v1.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://www.w3.org/ns/prov#" uri="provo/prov-o.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://ontology.eil.utoronto.ca/icity/Person/1.2/" uri="person-1.2/person.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://rds.posccaesar.org/ontology/lis14/ont/core/2.0" uri="ido-2.0/LIS-14.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://www.w3.org/ns/dcat" uri="dcat-3/dcat-v3.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://purl.org/coreo/1.0.0" uri="coreo-1.0.0/competence_ontology.ttl"/>
+    <uri id="User Edited Redirect" name="https://bvco.ontology.link" uri="bvco-0.4.2/BVCO.ttl"/>
+    <uri id="User Edited Redirect" name="https://bvco.ontology.link" uri="bvco-0.4.2/BVCO.ttl"/>
+    <uri id="User Edited Redirect" name="https://w3id.org/emmo" uri="EMMO-1.0.0-beta7/emmo.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://gpo.ontology.link" uri="gpo-0.2.0/GPO.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://w3id.org/emmo#1.0.0-beta7" uri="EMMO-1.0.0-beta7/emmo.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://big-map.github.io/BattINFO/ontology/BattINFO/0.7.0/battinfo-inferred" uri="BattINFO-0.7.0/battinfo-inferred.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://big-map.github.io/BattINFO/ontology/BattINFO/battinfo-inferred" uri="BattINFO-0.7.0/battinfo-inferred.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://big-map.github.io/BattINFO/ontology/BattINFO/0.7.0/battinfo" uri="BattINFO-0.7.0/battinfo.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://big-map.github.io/BattINFO/ontology/BattINFO" uri="BattINFO-0.7.0/battinfo.ttl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base=""/>
+</catalog>
