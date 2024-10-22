@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Edited Redirect" name="urn:samm:io.catenax.generic.digital_product_passport:5.0.0#" uri="io.catenax.generic.digital_product_passport-5.0.0/DigitalProductPassport.ttl"/>
+    <uri id="User Edited Redirect" name="urn:bamm:io.catenax.battery.product_description:1.0.1#" uri="io.catenax.battery.product_description-1.0.1/ProductDescription.ttl"/>
+    <uri id="User Edited Redirect" name="urn:samm:io.catenax.battery.battery_pass:6.0.0#" uri="io.catenax.battery.battery_pass-6.0.0/BatteryPass.ttl"/>
+    <uri id="User Edited Redirect" name="urn:samm:io.BatteryPass.CarbonFootprint:1.0.0#" uri="BatteryPass/io.BatteryPass.CarbonFootprint/1.0.0/CarbonFootprint.ttl"/>
+    <uri id="User Edited Redirect" name="urn:samm:io.BatteryPass.Circularity:1.0.0#" uri="BatteryPass/io.BatteryPass.Circularity/1.0.0/Circularity.ttl"/>
+    <uri id="User Edited Redirect" name="urn:samm:io.BatteryPass.SupplyChainDueDiligence:1.0.0#" uri="BatteryPass/io.BatteryPass.DueDiligence/1.0.0/SupplyChainDueDiligence.ttl"/>
+    <uri id="User Edited Redirect" name="urn:samm:io.BatteryPass.GeneralProductInformation:1.0.0#" uri="BatteryPass/io.BatteryPass.GeneralProductInformation/1.0.0/GeneralProductInformation.ttl"/>
+    <uri id="User Edited Redirect" name="urn:samm:io.BatteryPass.Labels:1.0.0#" uri="BatteryPass/io.BatteryPass.Labels/1.0.0/Labels.ttl"/>
+    <uri id="User Edited Redirect" name="urn:samm:io.BatteryPass.MaterialComposition:1.0.0#" uri="BatteryPass/io.BatteryPass.MaterialComposition/1.0.0/MaterialComposition.ttl"/>
+    <uri id="User Edited Redirect" name="urn:samm:io.BatteryPass.Performance:1.0.0#" uri="BatteryPass/io.BatteryPass.Performance/1.0.0/PerformanceAndDurability.ttl"/>
+
+
     <uri id="User Edited Redirect" name="http://qudt.org/2.1/schema/qudt" uri="qudt-public-repo-2.1.36/schema/SCHEMA_QUDT-v2.1.ttl"/>
     <uri id="User Edited Redirect" name="http://qudt.org/schema/qudt" uri="qudt-public-repo-2.1.36/schema/SCHEMA_QUDT-v2.1.ttl"/>
     <uri id="Imports Wizard Entry" name="https://w3id.org/idsa/core/4.2.0" uri="ids-4.2.0/ids.ttl"/>
