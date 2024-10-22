@@ -8,7 +8,7 @@ The development of the Circular TwAIn Ontology is carried out in Task 4.1 - *"De
 Get to know the implementation of the Ontology Library with the help of [Wiki Pages](https://github.com/Circular-TwAIn/CircularTwAIn-Ontology-Library/wiki)
 
 
-## Visulization of the Ontology
+## :framed_picture: Visualization of the Ontology
 To visualize the ontology, you can use the [WebVOWL](http://www.visualdataweb.de/webvowl/) tool. To start, run docker container with the following command:
 
 ```bash
