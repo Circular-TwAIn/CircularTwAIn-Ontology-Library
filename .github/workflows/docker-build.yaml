@@ -9,7 +9,7 @@ on:
       - main
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: sintef/circular-twain/circulartwain-ontology-library
+  IMAGE_NAME: circular-twain/circulartwain-ontology-library
 jobs:
   build-and-push-image:
     runs-on: ubuntu-latest
